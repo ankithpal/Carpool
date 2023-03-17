@@ -1,0 +1,68 @@
+.home{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    background-image: url('../assets/img3.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    .book-offer-card{
+        height: 40vh;
+        width: 50vw;
+        .inner-card{
+            width: 85%;
+            height: 80%;
+            .card-header{
+                height: 20%;
+                background-color: white;
+                border: none;
+            }
+            .card-header h2{
+                font-weight: bold;
+                width: inherit;
+                left: 0;
+            }
+            .card-inner-container{
+                .book-ride{
+                    width: 20vw;
+                    height: 25vh;
+                    color:white;
+                    background-color: rgb(130, 97, 180) ;
+                    border-radius:12px;
+                    
+                    link{
+                        color: white;
+                        text-decoration: none;
+                    }
+                }
+                .book-ride h3{
+                    Link{
+                        color: white;
+                        text-decoration: none;
+                    }
+                }
+                .book-ride:hover{
+                    cursor: pointer;
+                }
+                .offer-ride:hover{
+                    cursor: pointer;
+                }
+                .offer-ride{
+                         width: 20vw;
+                         height: 25vh;
+                         color:white;
+                         background-color:orange;
+                         border-radius:12px;
+                }
+                link{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
