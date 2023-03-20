@@ -1,44 +1,41 @@
-import React from "react";
+import {useState} from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import axios from  'axios';
-import { useState } from 'react';
+import jwt_decode from 'jwt-decode';
 import "./signupform.scss";
 
-
-export const SignUpForm = () => {
-  
-   let [email , setEmail] = useState<string>('');
-   let [password , setPassword] = useState<string>('');
-   let [conformPassword , setConformPassword] = useState<string>('');
-
-   const signUpUser= async (e : any)=>{
+export const LoginForm = () => {
+    let [email , setEmail] = useState<string>('');
+    let [password , setPassword] = useState<string>('');
+ 
+    const loginUser= async (e : any)=>{
        e.preventDefault();
-      try{
-        if(password == conformPassword){
-          const res = await axios.post("https://localhost:7256/signup",{
-            "id": 0,
-            "name": "ankith",
-            "phoneNo": "9738529",
-            "email": email,
-            "password": password
-          })
-          
-           res &&  window.location.replace('/login'); 
-        }else{
-            console.log("password not matching...");
+       try{
+        const url = 'https://localhost:7256/login';
+        const data = {
+          "email": email,
+          "password": password
         }
+
+        const  res : string  = await axios.post(url,data); 
+        localStorage.setItem('jwt-token', JSON.stringify(res));
+        // const user = jwt_decode(localStorage.getItem('jwt-token')!);
+        // console.log(user);
+        window.location.replace('/bookorofferride');
+        
         }catch(err){
-            console.log(err); 
+            console.log('the error is '+err); 
        }
-   }
+    }
+
   return (
     <div
-      className={`signupform d-flex align-items-center justify-content-center w-100 orange-shade-bg`}>
+      className={`signupform d-flex align-items-center justify-content-center w-100 violet-shade-bg`}>
       <div className="inner-signupform  h-100 mt-5 d-flex flex-column align-items-center justify-content-center">
         <div className="signup-header d-flex align-items-center justify-content-center">
-           <h1>Sign Up</h1>
+          <h1>Log In</h1>
         </div>
         <div className="mt-5 signup-form">
           <Form>
@@ -72,27 +69,12 @@ export const SignUpForm = () => {
                 Password
               </label>
             </Form.Group>
-              <Form.Group
-                className="mb-3 input-feild form-floating"
-                controlId="formBasicPassword"
-              >
-                <Form.Control
-                  type="password"
-                  id="conformpassword"
-                  placeholder="Conform Password"
-                  className="pt-3 pb-3"
-                  onChange={(e)=>setConformPassword(e.target.value)}
-                />
-                <label htmlFor="confrompassword" className="text-muted">
-                  Conform Password
-                </label>
-              </Form.Group>
             <div className="signup-button d-flex align-items-center justify-content-center w-100">
               <Button
                 variant="primary"
                 type="submit"
-                className={`violet-shade-bg`}
-                onClick={signUpUser}
+                className={`orange-shade-bg`}
+                onClick={loginUser}
                 >
                 Submit
               </Button>
@@ -100,11 +82,11 @@ export const SignUpForm = () => {
           </Form>
         </div>
           <div className="signup-text d-flex align-items-center justify-content-center">
-            <p>Already a member?</p>
+            <p>Don't have account ? </p>
             <p className="login-text">
-              <Link to="/login">
+              <Link to="/">
                 {" "}
-                Log In
+                sign up
               </Link>
             </p>
           </div>

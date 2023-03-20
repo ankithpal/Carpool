@@ -5,13 +5,14 @@ import { BookRide } from './Pages/Rides/BookRide';
 import { OfferRide } from './Pages/Rides/OfferRide';
 import { History } from './Pages/Rides/History';
 import './App.scss';
+import { Login } from './Pages/Authentication/Login';
 
 function App() {
   return (
     <div className="App">
      <Routes>
-        <Route path='/' element={<SignUp signup={true}/>}></Route>
-        <Route path='/login' element={<SignUp signup={false}/>}> </Route>
+        <Route path='/' element={<SignUp/>}></Route>
+        <Route path='/login' element={<Login/>}> </Route>
         <Route path='/bookorofferride' element={<Home/>}/>
         <Route path='/offerride' element={<OfferRide/>}/>
         <Route path='/bookride' element ={<BookRide/>}/>

@@ -27,7 +27,7 @@ export const OfferRide = () => {
         <div className="bookform-container d-flex flex-column align-items-center">
           <div className="toggle-container d-flex align-items-end">
               <div className='toggle-container-text lh-1'>
-                <h2>Book a Ride</h2>
+                <h2>Offer a Ride</h2>
                 <p>we get you the matches asap !</p>
               </div>
               <div className="toggle-btn d-flex justify-content-center">
@@ -73,7 +73,7 @@ export const OfferRide = () => {
           <div className="bookform-container d-flex flex-column align-items-center">
             <div className="toggle-container d-flex align-items-end">
                 <div className='toggle-container-text lh-1'>
-                  <h2>Book a Ride</h2>
+                  <h2>Offer a Ride</h2>
                   <p>we get you the matches asap !</p>
                 </div>
                   <div className="toggle-btn d-flex justify-content-center">

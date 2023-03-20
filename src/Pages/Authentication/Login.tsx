@@ -1,10 +1,12 @@
-import React from "react";
+import {useState} from "react";
+import axios from 'axios';
 import "./signup.scss";
 import logo from  '../../assets/logo.png';
 import img1 from "../../assets/img1.png";
-import { SignUpForm } from "./SignUpForm"; 
+import { LoginForm } from "./LoginForm";
 
-export const SignUp = () => {       
+export const Login = () => {  
+   
   return (
     <div className="signup d-flex">
       <div className="left-col h-100">
@@ -25,8 +27,8 @@ export const SignUp = () => {
           <img src={img1} className="img1 w-100 h-100"></img>
         </div>
       </div>
-      <div className={`right-col d-flex align-items-baseline h-100 flex-1 orange-shade-bg`}>
-          <SignUpForm />
+      <div className={`right-col d-flex align-items-baseline h-100 flex-1 violet-shade-bg`}>
+          <LoginForm/>
       </div>
     </div>
   );

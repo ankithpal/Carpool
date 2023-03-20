@@ -59,7 +59,7 @@ export const BookRide = () => {
           </div>
         </div>
        </div>
-       <div className="matches-container ">
+       <div className="matches-container">
          <div className="m-container-header d-flex align-items-center"><h3>Your Matches</h3></div>
          <div className="card-container d-flex flex-wrap">
           <MatchingCard/>
